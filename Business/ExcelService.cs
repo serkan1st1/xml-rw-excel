@@ -26,7 +26,7 @@ namespace TaskMvc.Business
 
             using (var package = new ExcelPackage())
             {
-                // Genel Bilgiler Sayfası
+
                 var worksheetGenelBilgiler = package.Workbook.Worksheets.Add("Genel Bilgiler");
                 var propertiesGenel = typeof(GenelBilgiler).GetProperties();
                 for (int i = 0; i < propertiesGenel.Length; i++)
@@ -37,11 +37,16 @@ namespace TaskMvc.Business
                 {
                     for (int j = 0; j < propertiesGenel.Length; j++)
                     {
-                        worksheetGenelBilgiler.Cells[i + 2, j + 1].Value = propertiesGenel[j].GetValue(genelBilgiler[i]);
+                        var value = propertiesGenel[j].GetValue(genelBilgiler[i]);
+                        worksheetGenelBilgiler.Cells[i + 2, j + 1].Value = value;
+
+                        if (value is DateTime)
+                        {
+                            worksheetGenelBilgiler.Cells[i + 2, j + 1].Style.Numberformat.Format = "dd.MM.yyyy HH:mm:ss";
+                        }
                     }
                 }
 
-                // Fatura Bilgileri Sayfası
                 var worksheetFaturaBilgileri = package.Workbook.Worksheets.Add("Fatura Bilgileri");
                 var propertiesFatura = typeof(FaturaBilgileri).GetProperties();
                 for (int i = 0; i < propertiesFatura.Length; i++)
@@ -52,11 +57,17 @@ namespace TaskMvc.Business
                 {
                     for (int j = 0; j < propertiesFatura.Length; j++)
                     {
-                        worksheetFaturaBilgileri.Cells[i + 2, j + 1].Value = propertiesFatura[j].GetValue(faturaBilgileri[i]);
+                        var value = propertiesFatura[j].GetValue(faturaBilgileri[i]);
+                        worksheetFaturaBilgileri.Cells[i + 2, j + 1].Value = value;
+
+                        if (value is DateTime)
+                        {
+                            worksheetFaturaBilgileri.Cells[i + 2, j + 1].Style.Numberformat.Format = "dd.MM.yyyy HH:mm:ss";
+                        }
                     }
                 }
 
-                // Mal Kalem Bilgileri Sayfası
+
                 var worksheetMalKalemBilgileri = package.Workbook.Worksheets.Add("Mal Kalem Bilgileri");
                 var propertiesMalKalem = typeof(MalKalemBilgileri).GetProperties();
                 for (int i = 0; i < propertiesMalKalem.Length; i++)
@@ -71,7 +82,7 @@ namespace TaskMvc.Business
                     }
                 }
 
-                // Talep Edilen İşletici Hizmetleri Sayfası
+
                 var worksheetTalepEdilen = package.Workbook.Worksheets.Add("Talep Edilen İşletici Hizmetleri");
                 var propertiesTalepEdilen = typeof(TalepEdilenIsleticiHizmetleri).GetProperties();
                 for (int i = 0; i < propertiesTalepEdilen.Length; i++)
@@ -86,7 +97,6 @@ namespace TaskMvc.Business
                     }
                 }
 
-                // SBİF Gümrük Bilgileri Sayfası
                 var worksheetSbifGumruk = package.Workbook.Worksheets.Add("SBİF Gümrük Bilgileri");
                 var propertiesSbifGumruk = typeof(SbifBilgiFisi).GetProperties();
                 for (int i = 0; i < propertiesSbifGumruk.Length; i++)
@@ -97,7 +107,13 @@ namespace TaskMvc.Business
                 {
                     for (int j = 0; j < propertiesSbifGumruk.Length; j++)
                     {
-                        worksheetSbifGumruk.Cells[i + 2, j + 1].Value = propertiesSbifGumruk[j].GetValue(sbifGumrukBilgileri[i]);
+                        var value = propertiesSbifGumruk[j].GetValue(sbifGumrukBilgileri[i]);
+                        worksheetSbifGumruk.Cells[i + 2, j + 1].Value = value;
+
+                        if (value is DateTime)
+                        {
+                            worksheetSbifGumruk.Cells[i + 2, j + 1].Style.Numberformat.Format = "dd.MM.yyyy HH:mm:ss";
+                        }
                     }
                 }
 
