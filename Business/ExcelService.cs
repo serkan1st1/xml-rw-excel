@@ -120,7 +120,6 @@ namespace TaskMvc.Business
                 var stream = new MemoryStream();
                 package.SaveAs(stream);
                 var content = stream.ToArray();
-                var fileName = "Bilgiler.xlsx";
                 return content;
             }
         }
