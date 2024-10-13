@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Excel Oluştur";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<div class="text-center">
+    <button id="downloadButton" class="btn btn-primary" onclick="window.location.href='@Url.Action("DownloadExcel", "FileDownload")'">
+        Excel Oluştur
+    </button>
+</div>

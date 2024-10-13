@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Dosya Yükle</h1>
+
+    <div style="margin-bottom: 10px;">
+        <input type="file" id="fileInput" accept=".xml" style="display:none;" />
+        <button id="fileSelectButton" class="btn btn-primary">Dosya Yükle</button>
+        <span id="fileName" style="margin-left: 10px;">No file chosen</span>
+    </div>
+    <div id="result" style="margin-top: 10px;"></div>
+</div>
+
+@section Scripts {
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                $("#fileSelectButton").click(function () {
+                    $("#fileInput").click();
+                });
+
+                $("#fileInput").change(function () {
+                    var fileInput = document.getElementById('fileInput');
+                    var fileNameDisplay = $("#fileName");
+
+                    if (fileInput.files.length === 0) {
+                        fileNameDisplay.text("No file chosen");
+                        alert("Lütfen bir dosya seçin.");
+                        return;
+                    }
+
+                    fileNameDisplay.text(fileInput.files[0].name);
+
+                    var formData = new FormData();
+                    formData.append("file", fileInput.files[0]);
+
+                    $.ajax({
+                        url: '@Url.Action("Upload", "FileUpload")',
+                        type: 'POST',
+                        data: formData,
+                        processData: false,
+                        contentType: false,
+                        success: function (response) {
+                            $("#result").html("Dosya başarıyla yüklendi!");
+                            alert("Dosya başarıyla yüklendi!");
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            alert("Hata: " + errorThrown);
+                        }
+                    });
+                });
+            });
+        </script>
+}
+
+<style>
+    .btn {
+        padding: 6px 12px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+</style>

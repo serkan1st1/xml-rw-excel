@@ -1,0 +1,10 @@
+IISExpress/
+*.vspscc
+
+
+# Visual Studio
+.vs/
+
+# Visual Studio Code
+.vscode/
+.history/
