@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F2pwYQvPf35A3DisiM6yAtJ0BeTwYE+vtBWPJ1MghFQ=",
+  "Hash": "5Y5Wmf0vHLg3L0HLxogi0Mul/TdI/c41doOoo2RKEwg=",
   "Source": "TaskMvc",
   "BasePath": "_content/TaskMvc",
   "Mode": "Default",
@@ -1193,6 +1193,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "D:\\script\\Task\\TaskMvc\\wwwroot\\uploads\\364fc6a7-c880-4258-ae2f-75290ffa8030_1.png",
+      "SourceId": "TaskMvc",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\script\\Task\\TaskMvc\\wwwroot\\",
+      "BasePath": "_content/TaskMvc",
+      "RelativePath": "uploads/364fc6a7-c880-4258-ae2f-75290ffa8030_1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\364fc6a7-c880-4258-ae2f-75290ffa8030_1.png"
     }
   ]
 }

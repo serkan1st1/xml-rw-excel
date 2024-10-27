@@ -6,6 +6,8 @@ using System.Text;
 using TaskMvc.Business;
 using TaskMvc.Data;
 using TaskMvc.Interface;
+using TaskMvc.Interface.Repository;
+using TaskMvc.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,9 @@ builder.Services.AddScoped<FileUploadService>();
 builder.Services.AddScoped<IFileUploadService, FileUploadService>();
 builder.Services.AddScoped<IFileSaveService, FileSaveService>();
 builder.Services.AddScoped<IExcelExportService, ExcelService>();
+builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+
 
 
 ExcelPackage.LicenseContext = LicenseContext.NonCommercial;

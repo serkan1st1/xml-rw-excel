@@ -17,6 +17,7 @@ namespace TaskMvc.Data
         public DbSet<MalKalemBilgileri> MalKalemBilgileri { get; set; }
         public DbSet<TalepEdilenIsleticiHizmetleri> TalepEdilenIsleticiHizmetleri { get; set; }
         public DbSet<SbifBilgiFisi> SbifBilgiFisi { get; set; }
+        public DbSet<Register> Registers { get; set; }
 
     }
 }
