@@ -30,6 +30,12 @@ namespace TaskMvc.Business
                     Directory.CreateDirectory(uploadsFolder);
                 }
 
+                var mntUploadsFolder = "/mnt/uploads";
+                if (!Directory.Exists(mntUploadsFolder))
+                {
+                    Directory.CreateDirectory(mntUploadsFolder);
+                }
+
                 // Resim dosyasının benzersiz bir adla kaydedilmesi
                 var uniqueFileName = Guid.NewGuid().ToString() + "_" + profileImage.FileName;
                 var filePath = Path.Combine(uploadsFolder, uniqueFileName);
@@ -37,6 +43,13 @@ namespace TaskMvc.Business
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
                     await profileImage.CopyToAsync(stream);
+                }
+
+                // /mnt/uploads içine kaydetme
+                var mntFilePath = Path.Combine(mntUploadsFolder, uniqueFileName);
+                using (var mntStream = new FileStream(mntFilePath, FileMode.Create))
+                {
+                    await profileImage.CopyToAsync(mntStream);
                 }
 
                 // Veritabanında saklayacağımız dosya yolu

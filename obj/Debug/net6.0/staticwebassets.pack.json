@@ -245,8 +245,16 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "D:\\script\\Task\\TaskMvc\\wwwroot\\uploads\\1cf8b39b-499b-4d44-9c74-c616b96a62af_1.png",
+      "PackagePath": "staticwebassets\\uploads\\1cf8b39b-499b-4d44-9c74-c616b96a62af_1.png"
+    },
+    {
       "Id": "D:\\script\\Task\\TaskMvc\\wwwroot\\uploads\\364fc6a7-c880-4258-ae2f-75290ffa8030_1.png",
       "PackagePath": "staticwebassets\\uploads\\364fc6a7-c880-4258-ae2f-75290ffa8030_1.png"
+    },
+    {
+      "Id": "D:\\script\\Task\\TaskMvc\\wwwroot\\uploads\\4fc7ef9e-d39e-48b8-96d8-3894f0cfb314_1.png",
+      "PackagePath": "staticwebassets\\uploads\\4fc7ef9e-d39e-48b8-96d8-3894f0cfb314_1.png"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.TaskMvc.Microsoft.AspNetCore.StaticWebAssets.props",

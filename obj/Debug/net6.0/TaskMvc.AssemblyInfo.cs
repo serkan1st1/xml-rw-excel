@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("11bc48d7-ccb8-481a-aef8-9b13567a3e66")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("TaskMvc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee23da21e2a9f9f844b1ee988243b6847167c3c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9029938293676ddc8067109ba9b79830a3583dec")]
 [assembly: System.Reflection.AssemblyProductAttribute("TaskMvc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TaskMvc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
